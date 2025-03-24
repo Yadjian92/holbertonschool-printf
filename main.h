@@ -19,7 +19,7 @@ int print_percent(va_list arg);
  */
 typedef struct print_s
 {
-	char *specifier;  /* Could be just a char for printf */
+	char specifier;  /* Could be just a char for printf */
 	int (*f)(va_list);
 } print_t;
 

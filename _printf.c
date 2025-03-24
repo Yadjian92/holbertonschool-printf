@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			return (-1);
 
 		j = 0;
-		while (p[j].specifier != '\0')
+		while (p[j].specifier != NULL)
 		{
 			if (format[i] == p[j].specifier)
 			{
