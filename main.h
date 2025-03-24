@@ -5,14 +5,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int _printf(const char *format, ...);
-int _putchar(char c);
-int print_char(va_list arg);
-int print_string(va_list arg);
-int print_percent(va_list arg);
-int handle_format(char format, va_list args, struct print_s p[]);
-
-
 /**
  * struct print_s - Struct for mapping specifiers to functions
  * @specifier: The format specifier
@@ -23,5 +15,12 @@ typedef struct print_s
 	char specifier;  /* Could be just a char for printf */
 	int (*f)(va_list);
 } print_t;
+
+int _printf(const char *format, ...);
+int _putchar(char c);
+int print_char(va_list arg);
+int print_string(va_list arg);
+int print_percent(va_list arg);
+int handle_format(char format, va_list args, struct print_s p[]);
 
 #endif
