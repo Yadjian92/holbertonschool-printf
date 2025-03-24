@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-
 /**
  * _printf - Custom implementation of printf function
  * @format: The format string containing the characters and format specifiers
- *
  * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
@@ -13,44 +11,38 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;  /* Compteur de caractères imprimés */
 	int i = 0, j;
-	
 
 	print_t p[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
-		{NULL, NULL}
+		{'0', NULL}
 	};
 
 	va_start(args, format);
 
-	while (format && format[i])
+while (format && format[i])
+{
+	if (format[i] != '%')
 	{
-		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			count++;
-		}
-
-		else
-		{
-		i++;  /* Passer au caractère après % */
-            
+		_putchar(format[i]);
+		count++;
+	}
+	else
+	{
+		i++;
 		if (format[i] == '\0')
-			return (-1);
-
-		j = 0;
-		while (p[j].specifier != NULL)
+		return (-1);
+	j = 0;
+	while (p[j].specifier != '\0')
+	{
+		if (format[i] == p[j].specifier)
 		{
-			if (format[i] == p[j].specifier)
-			{
-				count += p[j].f(args);
-				break;
-			}
-			j++;
+			count += p[j].f(args);
+			break;
 		}
-
-		/* Si spécificateur non reconnu */
+		j++;
+	}
 		if (p[j].specifier == '\0')
 		{
 			_putchar('%');
@@ -58,8 +50,8 @@ int _printf(const char *format, ...)
 			count += 2;
 		}
 	}
-
-	}
-	va_end(args);
-	return (count);
+	i++;
+}
+va_end(args);
+return (count);
 }

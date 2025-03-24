@@ -21,5 +21,10 @@ int main(void)
 	len2 = printf("String: %s\n", "I'm printf");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
+	/* Test percent */
+	len1 = _printf("Percent: %%\n");
+	len2 = printf("Percent: %%\n");
+	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
+
 	return (0);
 }
