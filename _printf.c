@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;  /* Compteur de caractères imprimés */
+	int count = 0;
 	int i = 0, j;
 
 	print_t p[] = {
@@ -21,37 +21,37 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-while (format && format[i])
-{
-	if (format[i] != '%')
+	while (format && format[i])
 	{
-		_putchar(format[i]);
-		count++;
-	}
-	else
-	{
-		i++;
-		if (format[i] == '\0')
-		return (-1);
-	j = 0;
-	while (p[j].specifier != '\0')
-	{
-		if (format[i] == p[j].specifier)
+		if (format[i] != '%')
 		{
-			count += p[j].f(args);
-			break;
-		}
-		j++;
-	}
-		if (p[j].specifier == '\0')
-		{
-			_putchar('%');
 			_putchar(format[i]);
-			count += 2;
+			count++;
 		}
-	}
+		else
+		{
+			i++;
+			if (format[i] == '\0')
+			return (-1);
+		j = 0;
+		while (p[j].specifier != '\0')
+		{
+			if (format[i] == p[j].specifier)
+			{
+				count += p[j].f(args);
+				break;
+			}
+			j++;
+		}
+			if (p[j].specifier == '\0')
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				count += 2;
+			}
+		}
 	i++;
-}
+	}
 va_end(args);
 return (count);
 }
