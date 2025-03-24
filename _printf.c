@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
+
 /**
  * _printf - Custom implementation of printf function
  * @format: The format string containing the characters and format specifiers
@@ -9,49 +9,31 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
-	int i = 0, j;
-
+	int count = 0, i = 0;
 	print_t p[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'0', NULL}
+		{'c', print_char}, {'%', print_percent},
+		{'s', print_string}, {'0', NULL}
 	};
+	if (!format)
+		return (-1);
 
 	va_start(args, format);
 
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
-			count++;
+			count += _putchar(format[i]);
 		}
 		else
 		{
 			i++;
 			if (format[i] == '\0')
-			return (-1);
-		j = 0;
-		while (p[j].specifier != '\0')
-		{
-			if (format[i] == p[j].specifier)
-			{
-				count += p[j].f(args);
-				break;
-			}
-			j++;
+				return (-1);
+			count += handle_format(format[i], args, p);
 		}
-			if (p[j].specifier == '\0')
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				count += 2;
-			}
-		}
-	i++;
+		i++;
 	}
-va_end(args);
-return (count);
+	va_end(args);
+	return (count);
 }

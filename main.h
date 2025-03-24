@@ -10,6 +10,7 @@ int _putchar(char c);
 int print_char(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
+int handle_format(char format, va_list args, struct print_s p[]);
 
 
 /**
