@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -59,14 +60,31 @@ int print_percent(va_list arg)
  */
 int print_integer(va_list arg)
 {
-	int n = va_arg(arg, int);
-    int count = 0;
+	int number = va_arg(arg, int);
+	int count = 0;
+	unsigned int digits;
 
-	/* Gérer les cas spéciaux comme les nombres négatifs */
+	if (number == 0)
+	{
+		return (_putchar('0'));
+	}
+	else if (number == INT_MIN)
+	{
+		count += _putchar('-');
+		count += _putchar('2');
+		digits = 147483648;
+	}
+	else if (number < 0)
+	{
+		count += _putchar('-');
+		digits = (unsigned int)(-number);
+	}
+	else
+		digits = number;
 
-	/* Appeler une fonction auxiliaire pour imprimer les chiffres */
+	count += print_digits(digits);
 
-	return count;
+	return (count);
 }
 
 /**
@@ -77,5 +95,29 @@ int print_integer(va_list arg)
  */
 int print_long(va_list arg)
 {
-	return (_putchar(va_arg(arg, int)));
+	int number = va_arg(arg, int);
+	int count = 0;
+	unsigned int digits;
+
+	if (number == 0)
+	{
+		return (_putchar('0'));
+	}
+	else if (number == INT_MIN)
+	{
+		count += _putchar('-');
+		count += _putchar('2');
+		digits = 147483648;
+	}
+	else if (number < 0)
+	{
+		count += _putchar('-');
+		digits = (unsigned int)(-number);
+	}
+	else
+		digits = number;
+
+	count += print_digits(digits);
+
+	return (count);
 }
