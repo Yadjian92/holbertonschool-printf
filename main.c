@@ -32,10 +32,12 @@ int main(void)
 	len2 = printf("Percent sign: %%\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
+	/* Test for %d */
 	len1 = _printf("Integer: %d\n");
 	len2 = printf("Integer: %d\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
+	/*Test for i% */
 	len1 = _printf("Long: %i\n");
 	len2 = printf("Long: %i\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
