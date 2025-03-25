@@ -12,7 +12,7 @@
  */
 typedef struct print_s
 {
-	char specifier;  /* Could be just a char for printf */
+	char specifier;
 	int (*f)(va_list);
 } print_t;
 

@@ -12,11 +12,6 @@ int main(void)
 	int len1;
 	int len2;
 
-	/* Test normal strings */
-	len1 = _printf("I'm printf!\n");
-	len2 = printf("I'm printf!\n");
-	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
-
 	/* Test for %c */
 	len1 = _printf("Character: %c\n", 'A');
 	len2 = printf("Character: %c\n", 'A');

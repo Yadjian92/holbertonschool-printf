@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		{'c', print_char}, {'%', print_percent},
 		{'s', print_string}, {'0', NULL}
 	};
-	if (!format)
+	if (format == NULL) /* si format est NULL*/
 		return (-1);
 
 	va_start(args, format);
