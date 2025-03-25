@@ -1,32 +1,36 @@
-NAME 
-		_printf - format and print data
+.TH _PRINTF(PROJECT) 28/03/2025
+.SH NAME
+_printf \- format and print data
 
-SYNOPSIS
-		#include "main.h"		
-		int _printf(const char *format, ...);
+.SH SYNOPSIS
+.PP
+.B "main.h"		
+.B int _printf(const char *format, ...);
 		
 
-DESCRIPTION
-		Print argument(s) according to format.
-		FORMAT controls the output as in C printf.
+.SH DESCRIPTION
+Print argument(s) according to format.
+FORMAT controls the output as in C printf.
 		
-		Interpreted sequences are:
+Interpreted sequences are:
 
-		%c prints a character
+.B %c prints a character
+.TP
+.B %s prints a string 
+.TP	
+.B %% prints a percent sign
+.TP	
+.B %d prints a integer
+.TP
+.B %i prints a long integer
+.TP
 
-		%s prints a string 
-		
-		%% prints a percent sign
-		
-		%d prints a integer
-		
-		%i prints a long integer
-
-RETURN VALUE
+.SH RETURN VALUE
 		_printf return the number of characters printed if the value , return 
 
-EXEMPLES
-		/* Print a character */
+.SH EXAMPLES
+.PP
+.B Example to print 
 		_printf("I'm a letter : %c\n", 'A');
 
 		/* Print a string argument */
@@ -45,10 +49,11 @@ EXEMPLES
 		_printf("Long number: %i\n", 789012);
 
 
-DATE
-		25/03/2025
+.SH DATE
+.PP
 
-AUTHORS 
+
+.SH AUTHORS 
 		Written by Lucas Boyadjian and Stephane Paton
 
 
