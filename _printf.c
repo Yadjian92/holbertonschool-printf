@@ -11,8 +11,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, i = 0;
 	print_t p[] = {
-		{'c', print_char}, {'%', print_percent},
-		{'s', print_string}, {'0', NULL}
+		{'c', print_char}, {'%', print_percent}, {'i', print_long},
+		{'s', print_string}, {'d', print_integer}, {'0', NULL}
 	};
 	if (format == NULL) /* si format est NULL*/
 		return (-1);
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 				return (-1);
-			count += handle_format(format[i], args, p);
+			count += choose_specifier(format[i], args, p);
 		}
 		i++;
 	}

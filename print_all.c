@@ -4,19 +4,6 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-
-/**
  * print_char - Prints a char
  * @arg: A va_list containing the char to print
  *
@@ -62,4 +49,33 @@ int print_percent(va_list arg)
 {
 	(void)arg;
 	return (_putchar('%'));
+}
+
+/**
+ * print_integer - Prints an integer
+ * @arg: A va_list containing the integer to print
+ *
+ * Return: The number of characters printed
+ */
+int print_integer(va_list arg)
+{
+	int n = va_arg(arg, int);
+    int count = 0;
+
+	/* Gérer les cas spéciaux comme les nombres négatifs */
+
+	/* Appeler une fonction auxiliaire pour imprimer les chiffres */
+
+	return count;
+}
+
+/**
+ * print_long - Prints a long integer
+ * @arg: A va_list containing the long integer to print
+ *
+ * Return: The number of characters printed
+ */
+int print_long(va_list arg)
+{
+	return (_putchar(va_arg(arg, int)));
 }
