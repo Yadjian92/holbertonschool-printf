@@ -46,7 +46,7 @@ int _putchar(char c)
  *
  * Return: Number of characters printed
  */
-int print_digits(int n)
+int print_digits(unsigned int n)
 {
 	int count = 0;
 
@@ -54,9 +54,7 @@ int print_digits(int n)
 		{
 			count += print_digits(n / 10);
 		}
-		if (n > 0)
-		{
 			count += _putchar((n % 10) + '0');
-		}
+
 	return (count);
 }

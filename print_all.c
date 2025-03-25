@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -67,15 +68,19 @@ int print_integer(va_list arg)
 	{
 		return (_putchar('0'));
 	}
-		if (number < 0)
+	else if (number == INT_MIN)
 	{
-			count += _putchar('-');
-			digits = (unsigned int)(-number);
+		count += _putchar('-');
+		count += _putchar('2');
+		digits = 147483648;
+	}
+	else if (number < 0)
+	{
+		count += _putchar('-');
+		digits = (unsigned int)(-number);
 	}
 	else
-	{
 		digits = number;
-	}
 
 	count += print_digits(digits);
 
@@ -98,17 +103,21 @@ int print_long(va_list arg)
 	{
 		return (_putchar('0'));
 	}
-		if (number < 0)
-		{
-			count += _putchar('-');
-			digits = (unsigned int)(-number);
-		}
-		else
-		{
-			digits = number;
-		}
+	else if (number == INT_MIN)
+	{
+		count += _putchar('-');
+		count += _putchar('2');
+		digits = 147483648;
+	}
+	else if (number < 0)
+	{
+		count += _putchar('-');
+		digits = (unsigned int)(-number);
+	}
+	else
+		digits = number;
 
-		count += print_digits(digits);
+	count += print_digits(digits);
 
-		return (count);
+	return (count);
 }
