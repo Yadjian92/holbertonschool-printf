@@ -11,8 +11,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, i = 0;
 	print_t p[] = {
-		{'c', print_char}, {'%', print_percent}, {'i', print_long},
-		{'s', print_string}, {'d', print_integer}, {'0', NULL}
+		{'c', print_char}, {'%', print_percent}, {'i', print_int},
+		{'s', print_string}, {'d', print_integer}, {'\0', NULL}
 	};
 	if (format == NULL)
 		return (-1);

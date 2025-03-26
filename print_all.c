@@ -88,12 +88,12 @@ int print_integer(va_list arg)
 }
 
 /**
- * print_long - Prints a long integer
- * @arg: A va_list containing the long integer to print
+ * print_int - Prints an integer
+ * @arg: A va_list containing the integer to print
  *
  * Return: The number of characters printed
  */
-int print_long(va_list arg)
+int print_int(va_list arg)
 {
 	int number = va_arg(arg, int);
 	int count = 0;

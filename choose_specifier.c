@@ -13,7 +13,7 @@ int choose_specifier(char format, va_list args, print_t p[])
 	int j = 0;
 	int count = 0;
 
-	while (p[j].specifier != '0')
+	while (p[j].specifier != '\0')
 	{
 		if (format == p[j].specifier)
 		{
@@ -22,7 +22,6 @@ int choose_specifier(char format, va_list args, print_t p[])
 		}
 		j++;
 	}
-
 	_putchar('%');
 	_putchar(format);
 	return (2);
