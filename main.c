@@ -32,12 +32,29 @@ int main(void)
 	len2 = printf("Percent sign: %%\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
+	/* Test for %d */
 	len1 = _printf("Integer: %d\n");
 	len2 = printf("Integer: %d\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
+	/*Test for i% */
 	len1 = _printf("Long: %i\n");
 	len2 = printf("Long: %i\n");
+	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
+
+	/* Test avec INT_MIN et INT_MAX */
+	len1 = _printf("Min: %d, Max: %d\n", INT_MIN, INT_MAX);
+	len2 = printf("Min: %d, Max: %d\n", INT_MIN, INT_MAX);
+	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
+
+	/* Test avec des nombres à plusieurs chiffres */
+	len1 = _printf("Multi-digit: %d %i\n", 12345, -67890);
+	len2 = printf("Multi-digit: %d %i\n", 12345, -67890);
+	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
+
+	/* Test avec un argument manquant */
+	len1 = _printf("Missing arg: %d\n");
+	len2 = printf("Missing arg: %d\n");
 	printf("Length _printf: %d, Length printf: %d\n", len1, len2);
 
 	return (0);

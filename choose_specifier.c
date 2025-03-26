@@ -13,7 +13,7 @@ int choose_specifier(char format, va_list args, print_t p[])
 	int j = 0;
 	int count = 0;
 
-	while (p[j].specifier != '0')
+	while (p[j].specifier != '\0')
 	{
 		if (format == p[j].specifier)
 		{
@@ -22,7 +22,6 @@ int choose_specifier(char format, va_list args, print_t p[])
 		}
 		j++;
 	}
-
 	_putchar('%');
 	_putchar(format);
 	return (2);
@@ -46,7 +45,7 @@ int _putchar(char c)
  *
  * Return: Number of characters printed
  */
-int print_digits(int n)
+int print_digits(unsigned int n)
 {
 	int count = 0;
 
@@ -54,9 +53,7 @@ int print_digits(int n)
 		{
 			count += print_digits(n / 10);
 		}
-		if (n > 0)
-		{
 			count += _putchar((n % 10) + '0');
-		}
+
 	return (count);
 }
