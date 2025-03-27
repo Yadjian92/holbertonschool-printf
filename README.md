@@ -12,7 +12,7 @@ This project is a custom implementation of the `printf` function in C. It handle
 
 ## Compilation
 
-To compile the _printf function and its dependencies, use the following command:
+To compile the printf function and its dependencies, use the following command:
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
@@ -22,7 +22,7 @@ This will create an executable named 'a.out' that you can run with various test 
 
 ## Files and Structure
 
-- **_printf.c**: Contains the main `_printf` function that parses the format string
+- **_printf.c**: Contains the main `printf` function that parses the format string
 - **print_all.c**: Contains handler functions for different format specifiers
 - **choose_specifier.c**: Contains the logic to select the appropriate handler function
 - **main.h**: Header file with function prototypes and structure definitions
@@ -155,9 +155,7 @@ Length _printf: 21, Length printf: 21
 
 ## Man-Page
 
-- To access the man-page for our _printf implementation, use the command:
-
-man ./man_3_printf
+To access the man-page for our printf implementation, use the command: man ./man_3_printf
 
 - <img src="Image/Man_page_printf.png"/>
 
@@ -186,4 +184,5 @@ This custom implementation of the `printf` function demonstrates the complexity 
 By building this function from scratch, we've gained insights into proper error handling, edge case management, and the importance of recursive thinking in programming.
 
 ## Authors
-- [Lucas Boyadjian](https://github.com/Yadjian92) and [Stéphane Paton](https://github.com/Steph974-Git)
+
+[Lucas Boyadjian](https://github.com/Yadjian92) and [Stephane Paton](https://github.com/Steph974-Git)

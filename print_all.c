@@ -52,6 +52,7 @@ int print_percent(va_list arg)
 	return (_putchar('%'));
 }
 
+
 /**
  * print_integer - Prints an integer
  * @arg: A va_list containing the integer to print
@@ -86,6 +87,7 @@ int print_integer(va_list arg)
 
 	return (count);
 }
+
 
 /**
  * print_digits - Prints the digits of an integer
