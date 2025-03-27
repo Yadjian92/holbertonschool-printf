@@ -182,4 +182,4 @@ This custom implementation of the `printf` function demonstrates the complexity 
 By building this function from scratch, we've gained insights into proper error handling, edge case management, and the importance of recursive thinking in programming.
 
 ## Authors
-- Lucas Boyadjian and Stéphane Paton
+- Lucas Boyadjian and Stephane Paton
