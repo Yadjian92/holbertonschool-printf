@@ -15,6 +15,7 @@ int choose_specifier(char format, va_list args, print_t p[])
 
 	while (p[j].specifier != '\0')
 	{
+		/* If a matching specifier is found */
 		if (format == p[j].specifier)
 		{
 			count += p[j].f(args);
@@ -22,6 +23,7 @@ int choose_specifier(char format, va_list args, print_t p[])
 		}
 		j++;
 	}
+	/* If no matching specifier was found, print % and the character */
 	_putchar('%');
 	_putchar(format);
 	return (2);
@@ -48,11 +50,12 @@ int _putchar(char c)
 int print_digits(unsigned int n)
 {
 	int count = 0;
-
+		/* For multi-digit numbers, recursively print all but last digit */
 		if (n / 10)
 		{
 			count += print_digits(n / 10);
 		}
+			/* Print current digit and update count */
 			count += _putchar((n % 10) + '0');
 
 	return (count);
