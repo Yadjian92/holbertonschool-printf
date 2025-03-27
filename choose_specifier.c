@@ -40,23 +40,3 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
-/**
- * print_digits - Prints the digits of an integer
- * @n: The integer to print
- *
- * Return: Number of characters printed
- */
-int print_digits(unsigned int n)
-{
-	int count = 0;
-		/* For multi-digit numbers, recursively print all but last digit */
-		if (n / 10)
-		{
-			count += print_digits(n / 10);
-		}
-			/* Print current digit and update count */
-			count += _putchar((n % 10) + '0');
-
-	return (count);
-}
