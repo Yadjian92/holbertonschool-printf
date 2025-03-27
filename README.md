@@ -152,6 +152,10 @@ INT_MIN: -2147483648
 Length _printf: 21, Length printf: 21
 ```
 
+## Flowchart of _printf
+
+![Flowchart](https://C:\Users\luc92\Pictures/Flowchart_printf.png)
+
 ## Implementation Challenges
 
 During the development of this project, several challenges were encountered:
