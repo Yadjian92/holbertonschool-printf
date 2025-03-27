@@ -28,8 +28,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			if (format[i] == '\0') /* Handle % at end of string */
+			if (format[i] == '\0')
 				return (-1);
+			/* Handle % at end of string */
 			count += choose_specifier(format[i], args, p);
 		}
 		i++;
