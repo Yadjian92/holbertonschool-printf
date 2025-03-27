@@ -15,7 +15,7 @@ This project is a custom implementation of the `printf` function in C. It handle
 To compile the _printf function and its dependencies, use the following command:
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 
 This will create an executable named 'printf' that you can run with various test cases.
@@ -151,6 +151,14 @@ INT_MIN: -2147483648
 INT_MIN: -2147483648
 Length _printf: 21, Length printf: 21
 ```
+
+## Flowchart of _printf
+
+- <img src="Image/Flowchart_printf.png"/>
+
+## Man-Page
+
+- <img src="Image/Man_page_printf.png"/>
 
 ## Implementation Challenges
 
