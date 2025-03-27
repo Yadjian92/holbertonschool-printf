@@ -1,7 +1,3 @@
 {
-    "files.associations": {
-        "main.h": "c",
-        "man_3_printf": "cpp"
-    },
     "C_Cpp.errorSquiggles": "disabled"
 }

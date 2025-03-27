@@ -23,6 +23,6 @@ int print_string(va_list arg);
 int print_percent(va_list arg);
 int print_integer(va_list arg);
 int print_digits(unsigned int n);
-int choose_specifier(char format, va_list args, struct print_s p[]);
+int choose_specifier(char format, va_list args, print_t p[]);
 
 #endif
