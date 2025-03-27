@@ -1,0 +1,3 @@
+# Ignore specific executables
+printf
+a.out
