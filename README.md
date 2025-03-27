@@ -18,7 +18,7 @@ To compile the _printf function and its dependencies, use the following command:
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 
-This will create an executable named 'printf' that you can run with various test cases.
+This will create an executable named 'a.out' that you can run with various test cases.
 
 ## Files and Structure
 
@@ -60,9 +60,6 @@ int main(void)
     _printf("Hello, %s!\n", "world");
     // Output: Hello, world!
     
-    _printf("The value of pi is approximately %d.%d\n", 3, 14);
-    // Output: The value of pi is approximately 3.14
-    
     _printf("Character: %c\n", 'A');
     // Output: Character: A
     
@@ -81,20 +78,20 @@ int main(void)
 
 int main(void)
 {
+    /* Output: Positive integer: 12345 */
     _printf("Positive integer: %d\n", 12345);
-    // Output: Positive integer: 12345
     
+    /* Output: Negative integer: -9876 */
     _printf("Negative integer: %d\n", -9876);
-    // Output: Negative integer: -9876
     
+    /* Output: Zero: 0 */
     _printf("Zero: %d\n", 0);
-    // Output: Zero: 0
     
+    /* Output: INT_MIN: -2147483648 */
     _printf("INT_MIN: %d\n", INT_MIN);
-    // Output: INT_MIN: -2147483648
     
+    /* Output: INT_MAX: 214748364 */
     _printf("INT_MAX: %d\n", INT_MAX);
-    // Output: INT_MAX: 2147483647
     
     return (0);
 }
@@ -107,14 +104,14 @@ int main(void)
 
 int main(void)
 {
+     /* Output: Regular string: Hello */
     _printf("Regular string: %s\n", "Hello");
-    // Output: Regular string: Hello
+   
+    /* Output: Empty string: */ 
+    _printf("Empty string: %s\n", ""); 
     
-    _printf("Empty string: %s\n", "");
-    // Output: Empty string: 
-    
+    /* Output: NULL string: (null) */
     _printf("NULL string: %s\n", NULL);
-    // Output: NULL string: (null)
     
     return (0);
 }
@@ -126,7 +123,7 @@ We tested our _printf implementation extensively to ensure it behaves identicall
 
 ### Test Cases
 
-We created a comprehensive test suite in main.c that covers:
+We created a comprehensive test in main.c that covers:
 - Basic format specifiers
 - Edge cases
 - Error handling
@@ -134,7 +131,7 @@ We created a comprehensive test suite in main.c that covers:
 Example test run:
 
 ```bash
-$ ./printf_test
+$ ./a.out
 Character: A
 Character: A
 Length _printf: 13, Length printf: 13
@@ -176,6 +173,8 @@ During the development of this project, several challenges were encountered:
 
 4. **Maintaining Consistency**: Ensuring our implementation behaves consistently with the standard `printf` function across all supported specifiers required extensive testing and debugging.
 
+5. **Organisation of the Flowchar**: Some difficulties to organize the flowchart effectively. We focused on making it both easy to read and an accurate representation of our code's execution path.
+
 ## Conclusion
 
 This custom implementation of the `printf` function demonstrates the complexity behind this seemingly simple standard library function. The project provides a deep understanding of variable arguments in C, string parsing, and modular programming techniques.
@@ -183,4 +182,4 @@ This custom implementation of the `printf` function demonstrates the complexity 
 By building this function from scratch, we've gained insights into proper error handling, edge case management, and the importance of recursive thinking in programming.
 
 ## Authors
-- Lucas and Stéphane
+- Lucas Boyadjian and Stéphane Paton
