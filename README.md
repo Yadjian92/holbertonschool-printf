@@ -156,6 +156,10 @@ Length _printf: 21, Length printf: 21
 
 - <img src="Image/Flowchart_printf.png"/>
 
+## Man-Page
+
+- [Man Page - printf](man_3_printf)
+
 ## Implementation Challenges
 
 During the development of this project, several challenges were encountered:
