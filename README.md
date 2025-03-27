@@ -57,14 +57,14 @@ int _putchar(char c);
 
 int main(void)
 {
+    /* Output: Hello, world! */
     _printf("Hello, %s!\n", "world");
-    // Output: Hello, world!
     
+    /* Output: Character: A */
     _printf("Character: %c\n", 'A');
-    // Output: Character: A
     
+    /* Output: Percent sign: % */
     _printf("Percent sign: %%\n");
-    // Output: Percent sign: %
     
     return (0);
 }
@@ -155,6 +155,10 @@ Length _printf: 21, Length printf: 21
 
 ## Man-Page
 
+- To access the man-page for our _printf implementation, use the command:
+
+man ./man_3_printf
+
 - <img src="Image/Man_page_printf.png"/>
 
 ## Implementation Challenges
@@ -182,4 +186,4 @@ This custom implementation of the `printf` function demonstrates the complexity 
 By building this function from scratch, we've gained insights into proper error handling, edge case management, and the importance of recursive thinking in programming.
 
 ## Authors
-- Lucas Boyadjian and Stéphane Paton
+- [Lucas Boyadjian](https://github.com/Yadjian92) and [Stéphane Paton](https://github.com/Steph974-Git)
