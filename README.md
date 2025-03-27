@@ -154,7 +154,7 @@ Length _printf: 21, Length printf: 21
 
 ## Flowchart of _printf
 
-<img src="Image/Flowchart_printf.png"/>
+- <img src="Image/Flowchart_printf.png"/>
 
 ## Implementation Challenges
 
