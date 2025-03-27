@@ -158,7 +158,7 @@ Length _printf: 21, Length printf: 21
 
 ## Man-Page
 
-- [Man Page - printf](man_3_printf)
+- <img src="Image/Man_page_printf.png"/>
 
 ## Implementation Challenges
 
