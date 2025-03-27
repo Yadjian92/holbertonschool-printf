@@ -72,12 +72,12 @@ int print_integer(va_list arg)
 	{
 		count += _putchar('-');
 		count += _putchar('2');
-		digits = 147483648;
+		digits = 147483648; /* Remaining digits after handling '-2' */
 	}
 	else if (number < 0)
 	{
 		count += _putchar('-');
-		digits = (unsigned int)(-number);
+		digits = (unsigned int)(-number); /* Convert to positive using unsigned */
 	}
 	else
 		digits = number;
@@ -88,36 +88,20 @@ int print_integer(va_list arg)
 }
 
 /**
- * print_int - Prints an integer
- * @arg: A va_list containing the integer to print
+ * print_digits - Prints the digits of an integer
+ * @n: The integer to print
  *
- * Return: The number of characters printed
+ * Return: Number of characters printed
  */
-int print_int(va_list arg)
+int print_digits(unsigned int n)
 {
-	int number = va_arg(arg, int);
 	int count = 0;
-	unsigned int digits;
 
-	if (number == 0)
-	{
-		return (_putchar('0'));
-	}
-	else if (number == INT_MIN)
-	{
-		count += _putchar('-');
-		count += _putchar('2');
-		digits = 147483648;
-	}
-	else if (number < 0)
-	{
-		count += _putchar('-');
-		digits = (unsigned int)(-number);
-	}
-	else
-		digits = number;
-
-	count += print_digits(digits);
+		if (n / 10)
+		{
+			count += print_digits(n / 10);
+		}
+			count += _putchar((n % 10) + '0');
 
 	return (count);
 }
