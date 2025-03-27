@@ -28,7 +28,7 @@ _printf("I'm the letter: %c\\n", 'A');
 .PP
 .B * To print a %s
 .nf
-_printf("I'm a %s!\\n", "string");\fR
+_printf("I'm a %s!\\n", "string");
 .fi
 .PP
 .B * To print a %
