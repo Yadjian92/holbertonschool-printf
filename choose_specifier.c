@@ -15,9 +15,9 @@ int choose_specifier(char format, va_list args, print_t p[])
 
 	while (p[j].specifier != '\0')
 	{
-		/* If a matching specifier is found */
-		if (format == p[j].specifier)
+		if (format == p[j].specifier) /* If a matching specifier is found */
 		{
+			/* Call the handler function for this specifier and add to count */
 			count += p[j].f(args);
 			return (count);
 		}
