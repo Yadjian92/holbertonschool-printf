@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
+			/* Print regular character and increment character count */
 			count += _putchar(format[i]);
 		}
 		else
@@ -30,6 +31,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0') /* Handle % at end of string */
 				return (-1);
+			/* Process format specifier and update character count */
 			count += choose_specifier(format[i], args, p);
 		}
 		i++;
